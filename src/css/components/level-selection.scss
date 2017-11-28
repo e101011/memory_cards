@@ -1,0 +1,30 @@
+.level-selection {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-around;
+	font-size: 30px;
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		li {
+			margin: 10px 0;
+		}
+
+		a {
+			color: $black;
+			background: $white-opacity;
+			padding: $padding-lines;
+			box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+
+			&:hover {
+				@include highlight(90%, 50%);
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+.title-screen {
+	max-width: 500px;
+	color: $black;
+	font-size: $font-size-lines;
+	transition: all .5s ease-in;
+
+	@include tablet {
+		padding: 40px;
+	}
+
+	span {
+		@include box-decoration-break(20px, .5, 50px);
+	}
+
+	button {
+		@include font;
+		@include highlight(100%, 0);
+		color: $black;
+		padding: 0;
+		font-size: 30px;
+	}
+}

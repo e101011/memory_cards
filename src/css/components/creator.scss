@@ -1,0 +1,58 @@
+.creator {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+
+	form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		max-width: 500px;
+
+		label, input, textarea, button {
+			color: $black;
+			background: $white-opacity;
+			box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.8);
+			font-size: $font-size;
+		}
+
+		label {
+			align-self: flex-start;
+			margin: 15px 0 15px;
+			padding: 3px 12px;
+		}
+
+		input, textarea {
+			@include font;
+			width: 100%;
+			padding: 3px 24px;
+			box-sizing: border-box;
+	}
+
+		textarea {
+			resize: none;
+		}
+	}
+
+	.add {
+		@include highlight(82%, 50%);
+		margin-top: 50px;
+	}
+
+	.disabled-link {
+		cursor: not-allowed;
+	}
+
+	@include tablet {
+		width: 80%;
+	}
+
+	.alternative {
+		@include mobile {
+			bottom: 12px;
+		}
+	}
+}

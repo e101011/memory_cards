@@ -1,0 +1,1 @@
+export const tablet = document.documentElement.clientWidth <= 690 || document.documentElement.clientHeight <= 500;

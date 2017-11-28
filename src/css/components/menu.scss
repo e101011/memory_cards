@@ -1,0 +1,176 @@
+.menu {
+	.top-menu {
+		position: absolute;
+		top: 0;
+		right: 70px;
+
+		button {
+			@include button($white, $black, 15px);
+			padding: 0 15px;
+			margin-left: 10px;
+			height: 30px;
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, .7);
+		}
+	}
+
+	.left-menu {
+		position: absolute;
+		width: calc(100% - 68px);
+		height: calc(100% - 138px);
+		left: 0;
+		top: 50%;
+		transform: translate(0, -50%);
+		z-index: 11;
+
+
+		.menu-button {
+			@include button($white, $black, 15px);
+			width: 30px;
+			height: 100px;
+			word-wrap: break-word;
+			text-transform: uppercase;
+			z-index: -1;
+
+
+			position: absolute;
+			top: 50%;
+			right: -30px;
+			transform: translate(0, -50%);
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, .7);
+		}
+
+		.menu-body {
+			width: 100%;
+			height: 100%;
+			background: $black;
+			box-shadow: 0 0 10px 0 rgba(0, 0, 0, .7);
+
+			.close-menu {
+				position: absolute;
+				right: 30px;
+				top: 20px;
+				width: 40px;
+				height: 40px;
+				cursor: pointer;
+
+				&:before, &:after {
+					@include pseudo-element(5px, 40px, transparent);
+					background: $white;
+					box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+					top: 0;
+					left: 16px;
+				}
+
+				&:before {
+					transform: rotate(45deg);
+				}
+
+				&:after {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+
+		.alternative {
+			visibility: hidden;
+			bottom: -50px;
+
+			@include tablet {
+				bottom: 30px;
+			}
+		}
+	}
+
+	.left-menu {
+		width: 0;
+
+		.level-selection {
+			width: 0;
+		}
+
+		&.open {
+			//@include animation(openMenu, .9s);
+			@include animation(openMenuDesktop, .9s);
+
+			@include tablet {
+				height: 100vh;
+				@include animation(openMenuTablet, .9s);
+			}
+
+			.level-selection {
+				@include animation(showLevel, 1.1s);
+			}
+
+			.alternative {
+				@include animation(showBottomMenu, .9s, 1s);
+			}
+
+			.close-menu {
+				@include animation(rotating, .4s, 1s);
+
+			}
+		}
+
+		&.close {
+			@include animation(closeMenuDesktop, .9s);
+
+			@include tablet {
+				height: 100vh;
+				@include animation(closeMenuTablet, .9s);
+			}
+		}
+	}
+
+	@include tablet {
+		display: flex;
+		width: 100%;
+
+		.top-menu {
+			display: flex;
+			position: static;
+			width: 100%;
+			height: 40px;
+			margin: 5px 10px 10px;
+
+			button {
+				font-size: 14px;
+				width: 100%;
+				padding: 0 5px;
+				margin: 0 10px 0 0;
+				height: 40px;
+				box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.7);
+
+				&:last-of-type {
+					border-right: 0;
+					margin-right: 0;
+				}
+
+				@include mobile {
+					padding: 0 3px;
+					margin: 0 2px 0 0;
+				}
+
+			}
+		}
+
+		.left-menu {
+			.alternative {
+				width: 100%;
+				color: $white-opacity;
+				left: 20px;
+
+				button {
+					@include button($black, $white-opacity, 16px);
+				}
+
+				@include tablet {
+					text-align: center;
+					left: 0;
+				}
+			}
+			.menu-button {
+				display: none;
+			}
+		}
+	}
+}

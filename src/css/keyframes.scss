@@ -1,0 +1,95 @@
+@keyframes openMenuDesktop {
+	from {
+		width: 0;
+	}
+
+	60% {
+		width: calc(100% - 50px);
+	}
+
+	to {
+		width: calc(100% - 68px);
+	}
+}
+
+@keyframes openMenuTablet {
+	from {
+		width: 0;
+	}
+
+	60% {
+		width: calc(100%);
+	}
+
+	to {
+		width: calc(100% - 9px);
+	}
+}
+
+@keyframes closeMenuDesktop {
+	from {
+		width: calc(100% - 68px)
+	}
+
+	40% {
+		width: calc(100% - 50px);
+	}
+
+	to {
+		width: 0;
+	}
+}
+
+@keyframes closeMenuTablet {
+	from {
+		width: calc(100% - 9px)
+	}
+
+	40% {
+		width: calc(100%);
+	}
+
+	to {
+		width: 0;
+	}
+}
+
+@keyframes showLevel {
+	from {
+		width: 0;
+	}
+
+	60% {
+		width: calc(100% + 18px);
+	}
+
+	to {
+		width: calc(100%);
+	}
+}
+
+
+@keyframes showBottomMenu {
+	from {
+		visibility: hidden;
+	}
+	to {
+		visibility: visible;
+	}
+}
+
+@keyframes rotating {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(35deg);
+	}
+	70% {
+		transform: rotate(15deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+	}
+}

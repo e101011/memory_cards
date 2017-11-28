@@ -1,0 +1,74 @@
+ @mixin font {
+	 font-family: 'Roboto', sans-serif;
+	 font-weight: bold;
+	 text-transform: uppercase;
+ }
+
+ @mixin highlight($width, $right) {
+	 position: relative;
+	 cursor: pointer;
+
+	 &:before {
+		 content: '';
+		 position: absolute;
+		 right: $right;
+		 bottom: -3px;
+		 width: $width;
+		 height: 13px;
+		 background: $blue;
+		 transform: translate($right, 0);
+	 }
+ }
+
+ @mixin button($color, $background, $font-size) {
+	 color: $color;
+	 background: $background;
+	 font-size: $font-size;
+ }
+
+ @mixin box-decoration-break($blur, $opacity, $line-height) {
+	 background: $white-opacity;
+	 -webkit-box-decoration-break: clone;
+	 box-decoration-break: clone;
+	 padding: $padding-lines;
+	 box-shadow: 0 0 $blur rgba(0, 0, 0, $opacity);
+	 line-height: $line-height;
+ }
+
+ @mixin animation($animation-name, $animation-duration, $animation-delay: null) {
+	 animation: $animation-delay $animation-name $animation-duration ease-out;
+	 animation-fill-mode: forwards;
+ }
+
+ @mixin pseudo-element($width, $height, $background) {
+	 content: '';
+	 position: absolute;
+	 width: $width;
+	 height: $height;
+	 background: $background;
+ }
+
+ @mixin bottom-menu {
+	 position: absolute;
+	 left: 30px;
+	 color: $black;
+
+	 button {
+		 @include button($white, $black, 16px);
+		 margin: 0 2px;
+		 padding: 3px 8px;
+		 box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.6);
+	 }
+ }
+
+ @mixin tablet {
+	 @media (max-width: $max-width), (max-height: $max-height)  {
+		 @content;
+	 }
+ }
+
+ @mixin mobile {
+	 @media (max-width: 480px) {
+		 @content;
+	 }
+ }
